@@ -2048,8 +2048,7 @@ function Control:Start()
 	end
 end
 
--- Readable upstream bundle keeps startup/debugging practical; it exposes the same Fluent API.
-local FLUENT_URL = "https://raw.githubusercontent.com/StyearX/Fluent-modded/main/dist/test/main_readable.lua"
+local FLUENT_URL = "https://raw.githubusercontent.com/StyearX/Fluent-modded/main/dist/main.lua"
 local FLUENT_THEME = "Deep Ocean"
 
 local SavedSettings = Env.AutoFarmSettings
@@ -2159,6 +2158,7 @@ local function buildUi()
 	end)
 	if not loaded or type(Fluent) ~= "table" then
 		Control.BuildError = "Fluent load failed: " .. tostring(Fluent)
+		warn("[FishingMaster] " .. Control.BuildError)
 		return nil
 	end
 
@@ -2525,6 +2525,7 @@ local function buildUi()
 
 	if not built or not window then
 		Control.BuildError = "UI build failed: " .. tostring(err)
+		warn("[FishingMaster] " .. Control.BuildError)
 		if type(Fluent.Destroy) == "function" then
 			pcall(function()
 				Fluent:Destroy()
