@@ -1,20 +1,3 @@
--- Skid Hub CLEAN - Auto Fish Only (1 file, WindUI, không code rác)
--- Phạm vi: client-side, dùng cho game fork Luau của team bạn.
--- GIỮ (logic câu y gốc): Auto Câu (cast->firstpull perfect->reel->QTE->loot),
---   delay 0.35s chỉnh được, Auto Skill LowHP + combo Z,X,C,V,
---   Lọc Cá theo rarity, Auto Lock theo rarity, WindUI 2 tab Farm + Lock.
--- CẮT SẠCH KHỎI SRC (không còn code, tìm không thấy):
---   bán cá đi travel, đảo/unlock/travel, nhiệm vụ, boss, quay, shop cần,
---   thưởng/code/ngày/nhóm/quà, misc di chuyển/util, profile/config-file,
---   ngôn ngữ, discord, nametag. Chỉ còn đúng mục câu.
--- Yêu cầu cấu trúc game fork giống bản gốc:
---   ReplicatedStorage.Stardust (Client/Packet)
---   ReplicatedStorage.Data.Packets.FishingPackets
---   ReplicatedStorage.Data.Config.FishingConfig
---   ReplicatedStorage.Data.Enums.FishingEnums
---   ReplicatedStorage.Shared.Lib.PullBarMath
---   Controllers: FishingController, RodController, LootController
-
 local getgenv_ = (typeof and typeof(getgenv) == "function" and getgenv()) or _G
 
 -- Dọn bản cũ nếu có (tránh chạy 2 loop)
